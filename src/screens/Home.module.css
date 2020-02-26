@@ -1,9 +1,25 @@
+@font-face {
+    font-family: 'Amatic';
+    src: url(../fonts/AmaticSC-Regular.ttf)
+  }
+  @font-face {
+    font-family: 'Detale';
+    src: url(../fonts/Datalegreya-Thin.otf)
+  }
+
+
 .home {
+    font-family: 'Amatic';
     width: 80%;
     margin: 0 auto
 }
 
 .weddingHall {
+    
     padding: 5%;
     border-top: 1px dotted black;
+}
+
+.bold{
+    font-weight: bold;
 }
