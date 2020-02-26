@@ -2,10 +2,23 @@
   text-align: center;
 }
 
+@font-face {
+  font-family: 'Marquette';
+  src: url(./fonts/Marquette.otf)
+}
+@font-face {
+  font-family: 'Sallina';
+  src: url(./fonts/Sallina.ttf)
+}
+
+h1{
+  font-family: 'Marquette';
+}
 nav {
+  font-family: 'Sallina';
   display: flex;
   min-height: 10vh;
-  font-size: 12px;
+  font-size: 16px;
   justify-content: center;
 }
 
