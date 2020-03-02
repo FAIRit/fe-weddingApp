@@ -1,6 +1,4 @@
 html {
-  width:100%;
-  /* background-color: rgb(247, 208, 157); */
   background: rgb(252,216,147);
   background: linear-gradient(193deg, rgba(252,216,147,1) 0%, rgba(252,137,70,1) 100%);
 }
@@ -8,6 +6,7 @@ html {
 .App {
   text-align: center;
   height:100% ;
+  padding-bottom: 40px;
 }
 
 @font-face {
@@ -64,4 +63,8 @@ justify-content: center;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.services {
+  background-image: url("./images/party.png");
 }

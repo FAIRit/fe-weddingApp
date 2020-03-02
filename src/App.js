@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Nav from './Nav';
 import Home from './screens/Home';
@@ -9,15 +9,17 @@ import Timetable from './screens/Timetable';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
+const [classname, setClassname] = useState("background")
+
   return (
     <Router>
    <h1>Natalia&Konrad</h1>
 
       
-      <div className="background"></div>
+      <div className={classname}></div>
       <div className="App">
         
-        <Nav />
+        <Nav settingClass={setClassname}/>
         <Switch>
           <Route path="/" component={Home} exact />
           <Route path="/Couple" component={HeShe} />

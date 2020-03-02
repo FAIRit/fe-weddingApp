@@ -1,0 +1,12 @@
+.card {
+    width: 80vw;
+    height: 25%;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    border: 1px dotted black;
+}
+
+img{
+    height: 100px;
+    width: auto;
+}
