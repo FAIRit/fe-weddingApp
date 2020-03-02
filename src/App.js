@@ -11,8 +11,12 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 function App() {
   return (
     <Router>
+   <h1>Natalia&Konrad</h1>
+
+      
+      <div className="background"></div>
       <div className="App">
-        <h1>Natalia&Konrad</h1>
+        
         <Nav />
         <Switch>
           <Route path="/" component={Home} exact />
@@ -22,6 +26,7 @@ function App() {
           <Route path="/Timetable" component={Timetable} />
         </Switch>
       </div>
+      
     </Router>
 
   );
