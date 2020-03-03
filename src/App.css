@@ -29,6 +29,7 @@ nav {
   min-height: 10vh;
   font-size: 16px;
   justify-content: center;
+  
 }
 
 .navigation {
@@ -47,6 +48,7 @@ nav {
  color: black;
 display: flex;
 justify-content: center;
+cursor: pointer;
 }
 
 

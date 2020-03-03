@@ -28,7 +28,8 @@ const [classname, setClassname] = useState("background")
           <Route path="/Timetable" component={Timetable} />
         </Switch>
       </div>
-      
+
+    
     </Router>
 
   );
