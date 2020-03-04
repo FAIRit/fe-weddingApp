@@ -1,25 +1,37 @@
 import React, { useState } from 'react';
 import style from './SignInPage.module.css';
+import { FirebaseContext } from '../components/Firebase';
 
-function SignInPage(props) {
+
+const SignInPage = () => (
+    <div>
+      <h1>SignUp</h1>
+      <FirebaseContext.Consumer>
+        {firebase => <SignInForm firebase={firebase} />}
+      </FirebaseContext.Consumer>
+    </div>
+  );
+
+function SignInForm(props) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null)
 
     const onSubmit = event => {
+        event.preventDefault();
         props.firebase
             .doSignInWithEmailAndPassword(email, password)
             .then(() => {
                 setEmail(email)
                 setPassword(password)
                 console.log(email, password, 'dobrze zalogowałes')
-                props.history.push("/");
+                // props.history.push("/");
                 debugger
             })
             .catch(error => {
                 setError(error);
             });
-        event.preventDefault();
+        
     };
 
     const isInvalid = password === '' || email === '';
@@ -46,7 +58,7 @@ function SignInPage(props) {
                         placeholder="Password"></input>
                 </div>
                 <div className={style.submit}>
-                    <button disabled={isInvalid} type="submit" onClick={() => {
+                    <button disabled={isInvalid} onClick={() => {
                         onSubmit()
                         }}>
                         Zaloguj
