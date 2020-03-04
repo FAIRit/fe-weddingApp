@@ -1,10 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import styles from './Home.module.css'
 
 function Home() {
     return (
         <div className={styles.home}>
             <h2>Pobieramy się!</h2>
+            <Link to="/SignIn">
+                <button>Zaloguj się</button>
+            </Link>
+
             <div className={styles.church}>
                 <div className={styles.bold}><i className="fas fa-church"></i>  Ślub</div>
                 <h3>04.09.2021r. Godzina</h3>
