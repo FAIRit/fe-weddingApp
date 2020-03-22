@@ -62,31 +62,31 @@ const INITIAL_STATE = {
           value={username}
           onChange={this.onChange}
           type="text"
-          placeholder="Full Name"
+          placeholder="Imię i nazwisko"
         />
         <input
           name="email"
           value={email}
           onChange={this.onChange}
           type="text"
-          placeholder="Email Address"
+          placeholder="Email"
         />
         <input
           name="passwordOne"
           value={passwordOne}
           onChange={this.onChange}
           type="password"
-          placeholder="Password"
+          placeholder="Hasło"
         />
         <input
           name="passwordTwo"
           value={passwordTwo}
           onChange={this.onChange}
           type="password"
-          placeholder="Confirm Password"
+          placeholder="Powtórz hasło"
         />
               <button disabled={isInvalid} type="submit">
-          Sign Up
+          Zarejestruj
         </button>
         {error && <p>{error.message}</p>}
       </form>
@@ -95,7 +95,7 @@ const INITIAL_STATE = {
 }
 const SignUpLink = () => (
   <p>
-    Don't have an account? <Link to="/SignUp">Sign Up</Link>
+    Nie masz jeszcze konta? <Link to="/SignUp">Zarejestruj się!</Link>
   </p>
 );
 

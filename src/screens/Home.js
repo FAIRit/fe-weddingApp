@@ -10,6 +10,10 @@ function Home() {
                 <button>Zaloguj się</button>
             </Link>
 
+            <Link to="/SignUp">
+                <button>Zarejestruj się</button>
+            </Link>
+
             <div className={styles.church}>
                 <div className={styles.bold}><i className="fas fa-church"></i>  Ślub</div>
                 <h3>04.09.2021r. Godzina</h3>

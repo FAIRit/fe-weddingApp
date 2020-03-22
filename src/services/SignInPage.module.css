@@ -1,3 +1,7 @@
+body {
+    height: 97vh;
+}
+
 form {
     display: flex;
     flex-direction: column;
