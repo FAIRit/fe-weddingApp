@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-function Nav(props) {
-    const { settingClass } = props
+
+function Nav({ settingClass, sticky}) {
 
     return (
-        <nav>
+        <nav className={sticky ? "sticky" : ""}>
             <ul className="navigation">
                 <Link to="/">
                     <li onClick={() => settingClass("background")}>Home</li>

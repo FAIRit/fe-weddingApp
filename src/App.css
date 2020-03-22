@@ -1,6 +1,7 @@
 html {
   background: rgb(252,216,147);
   background: linear-gradient(193deg, rgba(252,216,147,1) 0%, rgba(252,137,70,1) 100%);
+  scroll-behavior: smooth;
 }
 
 .App {
@@ -69,4 +70,14 @@ cursor: pointer;
 
 .services {
   background-image: url("./images/party.png");
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(255, 255, 255, 0.7);
 }

@@ -6,6 +6,9 @@ function Services() {
         <div>
             <h1>Service</h1>
             <Card/>
+            <Card/>
+            <Card/>
+            <Card/>
             </div>
 )
 }
