@@ -2,11 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 
 
-function Nav({ settingClass, sticky, authUser }) {
-    return (<nav className={sticky ? "sticky" : ""}>
-        {authUser ? NavAuthorized : NavNotAuthorized}
-    </nav>)
-}
 
 const NavNotAuthorized = (props) => (
     <ul className="navigation">
@@ -38,5 +33,11 @@ const NavAuthorized = (props) => (
         </Link>
     </ul>
 )
+
+const Nav = ({ settingClass, sticky, authUser }) => {
+    return (<nav className={sticky ? "sticky" : ""}>
+        {authUser ? NavAuthorized : NavNotAuthorized}
+    </nav>)
+}
 
 export default Nav;
