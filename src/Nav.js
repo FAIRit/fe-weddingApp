@@ -1,12 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { AuthUserContext } from './components/Session';
 
 
 
-const NavNotAuthorized = (props) => (
+const NavNotAuthorized = (settingClass) => (
     <ul className="navigation">
         <Link to="/">
-            <li onClick={() => props.settingClass("background")}>Home</li>
+            <li onClick={() => settingClass("background")}>Home</li>
         </Link>
         <Link to="/Timetable">
             <li>Timetable</li>
@@ -14,16 +15,16 @@ const NavNotAuthorized = (props) => (
     </ul>
 )
 
-const NavAuthorized = (props) => (
+const NavAuthorized = (settingClass) => (
     <ul className="navigation">
         <Link to="/">
-            <li onClick={() => props.settingClass("background")}>Home</li>
+            <li onClick={() => settingClass("background")}>Home</li>
         </Link>
         <Link to="/Couple">
             <li>Bride</li>
         </Link>
         <Link to="/Services">
-            <li onClick={() => props.settingClass("background services")}>Services</li>
+            <li onClick={() => settingClass("background services")}>Services</li>
         </Link>
         <Link to="/Place">
             <li>Place</li>
@@ -34,10 +35,15 @@ const NavAuthorized = (props) => (
     </ul>
 )
 
-const Nav = ({ settingClass, sticky, authUser }) => {
-    return (<nav className={sticky ? "sticky" : ""}>
-        {authUser ? NavAuthorized : NavNotAuthorized}
-    </nav>)
+function Nav({ settingClass, sticky, authUser }){
+    return (
+        <AuthUserContext.Consumer>
+            <nav className={sticky ? "sticky" : ""}>
+                {authUser ? NavAuthorized(settingClass) : NavNotAuthorized(settingClass)}
+            </nav>
+        </AuthUserContext.Consumer>
+
+    )
 }
 
 export default Nav;

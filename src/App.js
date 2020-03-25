@@ -11,13 +11,13 @@ import SignInPage from './services/SignInPage';
 import SignUpPage from './services/SingUpPage';
 import { withFirebase } from './components/Firebase';
 import { FirebaseContext } from './components/Firebase';
-// import { auth } from 'firebase';
+import { AuthUserContext } from './components/Session';
 // import PasswordForget from './services/PasswordForget';
 
 function App() {
   const [classname, setClassname] = useState("background")
   const [sticky, setSticky] = useState(false)
-  const [authUser, setauthUser] = useState('halo')
+  const [authUser, setauthUser] = useState(null)
   const firebase = useContext(FirebaseContext)
 
   useEffect(() => {
@@ -36,9 +36,10 @@ function App() {
       }
     })
     
-  }, [])
+  }, [authUser])
 
   return (
+    <AuthUserContext.Provider value={authUser}>
     <Router>
       <h1>{`Natalia&Konrad`}</h1>
 
@@ -61,7 +62,7 @@ function App() {
 
 
     </Router>
-
+    </AuthUserContext.Provider>
   );
 }
 
