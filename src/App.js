@@ -26,15 +26,15 @@ function App() {
         ? setauthUser({ authUser })
         : setauthUser(null);
     });
-    window.addEventListener('scroll', () => {
-      const isTop = window.scrollY < 383
+    // window.addEventListener('scroll', () => {
+    //   const isTop = window.scrollY < 383
 
-      if (!isTop) {
-        setSticky(true)
-      } else {
-        setSticky(false)
-      }
-    })
+    //   if (!isTop) {
+    //     setSticky(true)
+    //   } else {
+    //     setSticky(false)
+    //   }
+    // })
     
   }, [authUser])
 
