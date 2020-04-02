@@ -11,9 +11,6 @@ const NavNotAuthorized = ({ settingClass }) => (
 		<Link to="/Timetable">
 			<li>Timetable</li>
 		</Link>
-		<li>
-			<SignOut />
-		</li>
 	</ul>
 );
 

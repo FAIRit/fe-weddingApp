@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Nav from './Nav';
 import Home from './screens/Home';
@@ -9,23 +9,13 @@ import Timetable from './screens/Timetable';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import SignInPage from './services/SignInPage';
 import SignUpPage from './services/SingUpPage';
-import { withFirebase } from './components/Firebase';
-import { FirebaseContext } from './components/Firebase';
-import { AuthUserContext } from './components/Session';
-// import PasswordForget from './services/PasswordForget';
+import { withAuthentication } from './components/Session';
 
-function App() {
+function App({ authUser }) {
   const [classname, setClassname] = useState("background")
   const [sticky, setSticky] = useState(false)
-  const [authUser, setauthUser] = useState(null)
-  const firebase = useContext(FirebaseContext)
 
   useEffect(() => {
-    firebase.auth.onAuthStateChanged(authUser => {
-      authUser
-        ? setauthUser({ authUser })
-        : setauthUser(null);
-    });
     // window.addEventListener('scroll', () => {
     //   const isTop = window.scrollY < 383
 
@@ -36,10 +26,9 @@ function App() {
     //   }
     // })
     
-  }, [authUser])
+  }, [])
 
   return (
-    <AuthUserContext.Provider value={authUser}>
     <Router>
       <h1>{`Natalia&Konrad`}</h1>
 
@@ -62,8 +51,7 @@ function App() {
 
 
     </Router>
-    </AuthUserContext.Provider>
   );
 }
 
-export default withFirebase(App);
+export default withAuthentication(App);
