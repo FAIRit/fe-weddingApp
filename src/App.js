@@ -6,6 +6,9 @@ import HeShe from './screens/HeShe';
 import Services from './screens/Services';
 import WeddingHall from './screens/WeddingHall';
 import Timetable from './screens/Timetable';
+import PasswordForget from './services/PasswordForget';
+import Bride from './screens/Bride';
+import Groom from './screens/Groom';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import SignInPage from './services/SignInPage';
 import SignUpPage from './services/SingUpPage';
@@ -45,7 +48,10 @@ function App({ authUser }) {
           <Route path="/Timetable" component={Timetable} />
           <Route path="/SignUp" component={SignUpPage} />
           <Route path="/SignIn" component={SignInPage} />
-          {/* <Route path="/PasswordForget" component={PasswordForget} /> */}
+          <Route path="/PasswordForget" component={PasswordForget} />
+          <Route path="/Bride" component={Bride} />
+          <Route path="/Groom" component={Groom} />
+          
         </Switch>
       </div>
 

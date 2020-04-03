@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import style from './SignInPage.module.css';
 import { FirebaseContext } from '../components/Firebase';
+import PasswordForget from './PasswordForget';
 
 
 function SignInPage(props) {
@@ -16,7 +17,6 @@ function SignInPage(props) {
             .then(() => {
                 setEmail(email)
                 setPassword(password)
-                console.log(email, password, 'dobrze zalogowałes')
                 props.history.push("/");
             })
             .catch(error => {
@@ -58,6 +58,7 @@ function SignInPage(props) {
                 </div>
                 {error && <p>{error.message}</p>}
             </form>
+<PasswordForget />
 
         </div>
     )
