@@ -1,0 +1,44 @@
+.timetable {
+    display: flex;
+    justify-content: space-around;
+}
+
+.rightSide {
+    margin-top: 15%;
+    width: 45%;
+}
+
+.leftSide {
+    margin-top: -10%;
+    width: 45%;
+    border-right: dotted 3px black;
+}
+
+.freeIcons {
+    font-size: 8px;
+    margin-top: 40%;
+}
+
+.freeIcons a {
+    text-decoration: none;
+    color: rgb(102, 63, 4);
+}
+
+.icon {
+    width: 40px;
+    height: auto;
+    margin-top: 10%;
+}
+
+.weddingDay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.partyIcon {
+    width: 20%;
+    height: auto;
+}

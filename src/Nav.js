@@ -19,8 +19,11 @@ const NavAuthorized = ({ settingClass }) => (
 		<Link to="/">
 			<li onClick={() => settingClass('background')}>Home</li>
 		</Link>
-		<Link to="/Couple">
+		<Link to="/Bride">
 			<li>Bride</li>
+		</Link>
+		<Link to="/Groom">
+			<li>Groom</li>
 		</Link>
 		<Link to="/Services">
 			<li onClick={() => settingClass('background services')}>Services</li>
