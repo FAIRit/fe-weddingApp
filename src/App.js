@@ -33,11 +33,8 @@ function App({ authUser }) {
   return (
     <Router>
       <h1>{`Natalia&Konrad`}</h1>
-
-
       <div className={classname}></div>
       <div className="App">
-
         <Nav settingClass={setClassname} sticky={sticky} authUser={authUser} />
         <Switch>
           <Route path="/" component={Home} exact />
@@ -49,11 +46,8 @@ function App({ authUser }) {
           <Route path="/PasswordForget" component={PasswordForget} />
           <Route path="/Bride" component={Bride} />
           <Route path="/Groom" component={Groom} />
-          
         </Switch>
       </div>
-
-
     </Router>
   );
 }

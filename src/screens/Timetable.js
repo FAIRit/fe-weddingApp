@@ -23,9 +23,8 @@ function Timetable() {
                     <TimetableIcon src={bed} alt="bed" time="1 miesiąc" />
                     <TimetableIcon src={thankyou} alt="thankyou" time="1-2 dni" />
                 </div>
-
                 <div className={styles.rightSide}>
-                <TimetableIcon src={guests} alt="guests" time="10-11 miesięcy" />
+                    <TimetableIcon src={guests} alt="guests" time="10-11 miesięcy" />
                     <TimetableIcon src={rings} alt="rings" time="4-5 miesięcy" />
                     <TimetableIcon src={dance} alt="first dance" time="2 miesiące" />
                     <TimetableIcon src={calendar} alt="timetable" time="1 tydzień" />

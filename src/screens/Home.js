@@ -9,11 +9,9 @@ function Home() {
             <Link to="/SignIn">
                 <button>Zaloguj się</button>
             </Link>
-
             <Link to="/SignUp">
                 <button>Zarejestruj się</button>
             </Link>
-
             <div className={styles.home}>
                 <div className={styles.bold}><i className="fas fa-church"></i>  Ślub</div>
                 <h3>04.09.2021r. Godzina</h3>
