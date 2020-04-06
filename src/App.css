@@ -42,6 +42,7 @@ nav {
   align-items: center;
   list-style: none;
   padding: 0;
+  flex-wrap: wrap;
 }
 
 .navigation li, .navigation a{

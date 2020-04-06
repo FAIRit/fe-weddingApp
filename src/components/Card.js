@@ -1,11 +1,10 @@
 import React from 'react';
 import style from './Card.module.css';
-import img from '../images/4e54c4a950039f2749513cb3f65af175.jpg'
 
-function Card() {
+function Card({ img, alt, title, icon }) {
     return (
         <div className={style.card}>
-            <i className="fas fa-holly-berry"></i><p>dekoracje</p>
+            <i className={icon}></i><p>{title}</p>
             <img src={img} alt=""></img>
         </div>
     )
