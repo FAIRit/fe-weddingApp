@@ -1,6 +1,13 @@
+@font-face {
+    font-family: 'Amatic';
+    src: url(../fonts/AmaticSC-Regular.ttf)
+}
+
 .timetable {
     display: flex;
     justify-content: space-around;
+    font-family: 'Amatic';
+    font-size: 20px;
 }
 
 .rightSide {
@@ -9,7 +16,7 @@
 }
 
 .leftSide {
-    margin-top: -10%;
+    margin-top: -7%;
     width: 45%;
     border-right: dotted 3px black;
 }
@@ -36,6 +43,8 @@
     align-items: center;
     width: 80%;
     margin: 0 auto;
+    font-family: 'Amatic';
+    font-size: 20px;
 }
 
 .partyIcon {
