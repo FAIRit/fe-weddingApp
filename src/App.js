@@ -15,7 +15,6 @@ import { withAuthentication } from './components/Session';
 
 function App({ authUser }) {
   const [classname, setClassname] = useState("background")
-  const [sticky, setSticky] = useState(false)
 
   useEffect(() => {
     // window.addEventListener('scroll', () => {
@@ -35,7 +34,7 @@ function App({ authUser }) {
       <h1>{`Natalia&Konrad`}</h1>
       <div className={classname}></div>
       <div className="App">
-        <Nav settingClass={setClassname} sticky={sticky} authUser={authUser} />
+        <Nav settingClass={setClassname} authUser={authUser} />
         <Switch>
           <Route path="/" component={Home} exact />
           <Route path="/Services" component={Services} />

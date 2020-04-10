@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
 import { withFirebase } from '../components/Firebase';
+import * as ROLES from '../constants/roles';
 
 const SignUpPage = () => (
   <div>
@@ -11,20 +12,28 @@ const SignUpPage = () => (
 );
 
 const INITIAL_STATE = {
-    username: '',
-    email: '',
-    passwordOne: '',
-    passwordTwo: '',
-    error: null,
-  };
-  class SignUpFormBase extends Component  {
+  username: '',
+  email: '',
+  passwordOne: '',
+  passwordTwo: '',
+  isBride: false,
+  isGroom: false,
+  error: null,
+};
+class SignUpFormBase extends Component {
   constructor(props) {
     super(props);
 
     this.state = { ...INITIAL_STATE };
   }
   onSubmit = event => {
-    const { email, passwordOne, username } = this.state;
+    const { username, email, passwordOne, isBride, isGroom } = this.state;
+    const roles = {};
+    if (isBride) {
+      roles[ROLES.BRIDE] = ROLES.BRIDE;
+    } else if (isGroom) {
+      roles[ROLES.GROOM] = ROLES.GROOM
+    }
     this.props.firebase
       .doCreateUserWithEmailAndPassword(email, passwordOne)
       .then(authUser => {
@@ -33,6 +42,7 @@ const INITIAL_STATE = {
           .set({
             username,
             email,
+            roles
           });
       })
       .then(() => {
@@ -47,16 +57,22 @@ const INITIAL_STATE = {
   onChange = event => {
     this.setState({ [event.target.name]: event.target.value });
   };
+  onChangeCheckbox = event => {
+    this.setState({ [event.target.name]: event.target.checked });
+    console.log('bride')
+  };
   render() {
     const {
-        username,
-        email,
-        passwordOne,
-        passwordTwo,
-        error,
-      } = this.state;
+      username,
+      email,
+      passwordOne,
+      passwordTwo,
+      isBride,
+      isGroom,
+      error,
+    } = this.state;
 
-      const isInvalid =
+    const isInvalid =
       passwordOne !== passwordTwo ||
       passwordOne === '' ||
       email === '' ||
@@ -65,7 +81,7 @@ const INITIAL_STATE = {
 
     return (
       <form onSubmit={this.onSubmit}>
-                  <input
+        <input
           name="username"
           value={username}
           onChange={this.onChange}
@@ -93,7 +109,16 @@ const INITIAL_STATE = {
           type="password"
           placeholder="Powtórz hasło"
         />
-              <button disabled={isInvalid} type="submit">
+        {/* <label>
+          Groom:
+          <input
+            name="isGroom"
+            type="checkbox"
+            checked={isGroom}
+            onChange={this.onChangeCheckbox}
+          />
+        </label> */}
+        <button disabled={isInvalid} type="submit">
           Zarejestruj
         </button>
         {error && <p>{error.message}</p>}
@@ -108,8 +133,8 @@ const SignUpLink = () => (
 );
 
 const SignUpForm = compose(
-    withRouter,
-    withFirebase,
-  )(SignUpFormBase);
+  withRouter,
+  withFirebase,
+)(SignUpFormBase);
 export default SignUpPage;
 export { SignUpForm, SignUpLink };

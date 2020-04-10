@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { AuthUserContext } from './components/Session';
 import SignOut from './services/SignOut';
+import * as ROLES from './constants/roles';
 
 const NavNotAuthorized = ({ settingClass }) => (
 	<ul className="navigation notAuth">
@@ -14,17 +15,21 @@ const NavNotAuthorized = ({ settingClass }) => (
 	</ul>
 );
 
-const NavAuthorized = ({ settingClass }) => (
+const NavAuthorized = ({ settingClass, authUser }) => (
 	<ul className="navigation">
 		<Link to="/">
 			<li onClick={() => settingClass('background')}>Home</li>
 		</Link>
-		<Link to="/Bride">
-			<li>Bride</li>
-		</Link>
-		<Link to="/Groom">
-			<li>Groom</li>
-		</Link>
+		{!!authUser.roles[ROLES.BRIDE] && (
+      <li>
+        <Link to={'/Bride'}>Bride</Link>
+      </li>
+    )}
+	{!!authUser.roles[ROLES.GROOM] && (
+      <li>
+        <Link to={"/Groom"}>Groom</Link>
+      </li>
+    )}
 		<Link to="/Services">
 			<li onClick={() => settingClass('background services')}>Services</li>
 		</Link>
@@ -48,7 +53,7 @@ function Nav({ settingClass, sticky, authUser }) {
 			<AuthUserContext.Consumer>
 				{(sticky) =>
 					authUser ? (
-						<NavAuthorized settingClass={settingClass} />
+						<NavAuthorized settingClass={settingClass} authUser={authUser} />
 					) : (
 						<NavNotAuthorized settingClass={settingClass} />
 					)}
