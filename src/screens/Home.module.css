@@ -1,28 +1,29 @@
 @font-face {
-    font-family: 'Amatic';
-    src: url(../fonts/AmaticSC-Regular.ttf)
-  }
-  @font-face {
-    font-family: 'Marquette';
-    src: url(../fonts/Marquette.otf)
-  }
+  font-family: 'Amatic';
+  src: url(../fonts/AmaticSC-Regular.ttf)
+}
+
+@font-face {
+  font-family: 'Marquette';
+  src: url(../fonts/Marquette.otf)
+}
 
 
 .home {
-    font-family: 'Amatic';
-    width: 80%;
-    margin: 0 auto;
-    font-size: 18px;
-    margin-top: 5%;
+  font-family: 'Amatic';
+  width: 80%;
+  margin: 0 auto;
+  font-size: 18px;
+  margin-top: 5%;
 }
 
 .topBorder {
-    padding: 5%;
-    border-top: 1px dotted black;
+  padding: 5%;
+  border-top: 1px dotted black;
 }
 
-.bold{
-    font-weight: bold;
+.bold {
+  font-weight: bold;
 }
 
 .gettingMarried {

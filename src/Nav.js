@@ -21,15 +21,15 @@ const NavAuthorized = ({ settingClass, authUser }) => (
 			<li onClick={() => settingClass('background')}>Home</li>
 		</Link>
 		{!!authUser.roles[ROLES.BRIDE] && (
-      <li>
-        <Link to={'/Bride'}>Bride</Link>
-      </li>
-    )}
-	{!!authUser.roles[ROLES.GROOM] && (
-      <li>
-        <Link to={"/Groom"}>Groom</Link>
-      </li>
-    )}
+			<li>
+				<Link to={'/Bride'}>Bride</Link>
+			</li>
+		)}
+		{!!authUser.roles[ROLES.GROOM] && (
+			<li>
+				<Link to={"/Groom"}>Groom</Link>
+			</li>
+		)}
 		<Link to="/Services">
 			<li onClick={() => settingClass('background services')}>Services</li>
 		</Link>
@@ -55,8 +55,8 @@ function Nav({ settingClass, sticky, authUser }) {
 					authUser ? (
 						<NavAuthorized settingClass={settingClass} authUser={authUser} />
 					) : (
-						<NavNotAuthorized settingClass={settingClass} />
-					)}
+							<NavNotAuthorized settingClass={settingClass} />
+						)}
 			</AuthUserContext.Consumer>
 		</nav>
 	);

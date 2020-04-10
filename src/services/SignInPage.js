@@ -22,7 +22,7 @@ function SignInPage(props) {
             .catch(error => {
                 setError(error);
             });
-        
+
     };
 
     const isInvalid = password === '' || email === '';
@@ -51,14 +51,14 @@ function SignInPage(props) {
                 <div className={style.submit}>
                     <button disabled={isInvalid} onClick={(e) => {
                         onSubmit(e)
-                        }}>
+                    }}>
                         Zaloguj
                     </button>
 
                 </div>
                 {error && <p>{error.message}</p>}
             </form>
-<PasswordForget />
+            <PasswordForget />
 
         </div>
     )

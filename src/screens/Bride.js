@@ -25,13 +25,13 @@ function Bride() {
 
   return (
     <AuthUserContext.Consumer>
-        <div>
-          {loading && <div>Loading ...</div>}
-          Bride
+      <div>
+        {loading && <div>Loading ...</div>}
+        Bride
           <p>
-            The Admin Page is accessible by every signed in admin user.
+          The Admin Page is accessible by every signed in admin user.
         </p>
-        </div>
+      </div>
     </AuthUserContext.Consumer>
   )
 }

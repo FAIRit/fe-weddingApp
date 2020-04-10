@@ -26,7 +26,7 @@ function App({ authUser }) {
     //     setSticky(false)
     //   }
     // })
-    
+
   }, [])
 
   return (
