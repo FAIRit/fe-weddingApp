@@ -24,10 +24,18 @@ const INITIAL_STATE = {
     this.state = { ...INITIAL_STATE };
   }
   onSubmit = event => {
-    const { email, passwordOne } = this.state;
+    const { email, passwordOne, username } = this.state;
     this.props.firebase
       .doCreateUserWithEmailAndPassword(email, passwordOne)
       .then(authUser => {
+        return this.props.firebase
+          .user(authUser.user.uid)
+          .set({
+            username,
+            email,
+          });
+      })
+      .then(() => {
         this.setState({ ...INITIAL_STATE });
         this.props.history.push("/");
       })
