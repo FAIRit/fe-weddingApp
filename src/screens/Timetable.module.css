@@ -6,7 +6,7 @@
 .timetable {
     display: flex;
     justify-content: space-around;
-    font-family: 'Amatic';
+    font-family: 'Amatic', sans-serif;
     font-size: 20px;
 }
 
@@ -43,7 +43,7 @@
     align-items: center;
     width: 80%;
     margin: 0 auto;
-    font-family: 'Amatic';
+    font-family: 'Amatic', sans-serif;
     font-size: 20px;
 }
 

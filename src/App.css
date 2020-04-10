@@ -24,12 +24,12 @@ html {
 
 
 h1 {
-  font-family: 'Marquette';
+  font-family: 'Marquette', sans-serif;
   text-align: center;
 }
 
 nav {
-  font-family: 'Sallina';
+  font-family: 'Sallina', sans-serif;
   display: flex;
   min-height: 10vh;
   font-size: 16px;
