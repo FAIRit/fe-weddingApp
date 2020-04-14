@@ -5,7 +5,7 @@
 
 .card {
     width: 80vw;
-    height: 25%;
+    height: 25vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,7 +16,42 @@
     font-family: 'Amatic', sans-serif;
 }
 
-img {
+.img {
     height: 150px;
     width: auto;
+}
+
+.icon {
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.title {
+    padding: 0;
+    margin: 10px 0;
+}
+
+@media only screen and (min-width: 580px) {
+    .card {
+        width: 35vw;
+        margin: 1%;
+        padding: 3% 1%;
+    }
+}
+
+@media only screen and (min-width: 980px) {
+    .card {
+        margin: 3%;
+        padding:1%;
+        height: auto;
+    }
+
+    .icon {
+        font-size: 28px;
+    }
+
+    .img {
+        height: 230px;
+    }
 }

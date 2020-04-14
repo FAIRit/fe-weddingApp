@@ -32,7 +32,7 @@ nav {
   font-family: 'Sallina', sans-serif;
   display: flex;
   min-height: 10vh;
-  font-size: 16px;
+  font-size: 20px;
   justify-content: center;
 
 }
@@ -135,6 +135,13 @@ nav {
     color: wheat;
     font-size: 16px;
     font-family: 'Amatic', sans-serif;
+}
+
+.signOutButton {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer
 }
 
 @media only screen and (min-width: 580px) {

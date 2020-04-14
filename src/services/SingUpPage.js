@@ -3,10 +3,10 @@ import { Link, withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
 import { withFirebase } from '../components/Firebase';
 import * as ROLES from '../constants/roles';
+import styles from './SignUpPage.module.css';
 
 const SignUpPage = () => (
   <div>
-    <h1>SignUp</h1>
     <SignUpForm />
   </div>
 );
@@ -67,8 +67,6 @@ class SignUpFormBase extends Component {
       email,
       passwordOne,
       passwordTwo,
-      isBride,
-      isGroom,
       error,
     } = this.state;
 
@@ -81,7 +79,9 @@ class SignUpFormBase extends Component {
 
     return (
       <form onSubmit={this.onSubmit}>
+        <p className={styles.title}>Rejestracja</p>
         <input
+        className={styles.input}
           name="username"
           value={username}
           onChange={this.onChange}
@@ -89,6 +89,7 @@ class SignUpFormBase extends Component {
           placeholder="Imię i nazwisko"
         />
         <input
+        className={styles.input}
           name="email"
           value={email}
           onChange={this.onChange}
@@ -96,6 +97,7 @@ class SignUpFormBase extends Component {
           placeholder="Email"
         />
         <input
+        className={styles.input}
           name="passwordOne"
           value={passwordOne}
           onChange={this.onChange}
@@ -103,22 +105,14 @@ class SignUpFormBase extends Component {
           placeholder="Hasło"
         />
         <input
+        className={styles.input}
           name="passwordTwo"
           value={passwordTwo}
           onChange={this.onChange}
           type="password"
           placeholder="Powtórz hasło"
         />
-        {/* <label>
-          Groom:
-          <input
-            name="isGroom"
-            type="checkbox"
-            checked={isGroom}
-            onChange={this.onChangeCheckbox}
-          />
-        </label> */}
-        <button disabled={isInvalid} type="submit">
+        <button disabled={isInvalid} type="submit" className={styles.submit}>
           Zarejestruj
         </button>
         {error && <p>{error.message}</p>}
