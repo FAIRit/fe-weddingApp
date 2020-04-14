@@ -10,29 +10,27 @@ function Bride() {
   const [loading, setloading] = useState(false);
   const [users, setusers] = useState([]);
 
-  useEffect(() => {
-    setloading(true);
-    firebase.users().on('value', snapshot => {
-      const usersObject = snapshot.val();
-      const usersList = Object.keys(usersObject).map(key => ({
-        ...usersObject[key],
-        uid: key,
-      }));
-      setusers(usersList)
-      setloading(false)
-    });
-  }, [users])
+    useEffect(() => {
+      setloading(true);
+      firebase.users().on('value', snapshot => {
+        const usersObject = snapshot.val();
+        const usersList = Object.keys(usersObject).map(key => ({
+          ...usersObject[key],
+          uid: key,
+        }));
+        setusers(usersList)
+        setloading(false)
+      });
+    }, [users])
 
   return (
-    <AuthUserContext.Consumer>
-      <div>
-        {loading && <div>Loading ...</div>}
-        Bride
-          <p>
-          The Admin Page is accessible by every signed in admin user.
-        </p>
+
+        <div>
+          {loading && <div>Loading ...</div>}
+          Bride
       </div>
-    </AuthUserContext.Consumer>
+
+
   )
 }
 

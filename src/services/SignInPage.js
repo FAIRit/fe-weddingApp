@@ -30,26 +30,28 @@ function SignInPage(props) {
         <div>
             <form>
                 <div className={style.loginLabel}>
-                    <label>Login</label>
+                    <label className={style.label}>E-mail</label>
                     <input
+                    className={style.input}
                         name="email"
                         value={email}
                         onChange={event => setEmail(event.target.value)}
                         type="text"
-                        placeholder="Email Address"
+                        placeholder="grazyna@gmail.com"
                     ></input>
                 </div>
                 <div className={style.loginLabel}>
-                    <label>Hasło</label>
+                    <label className={style.label}>Hasło</label>
                     <input
+                    className={style.input}
                         name="password"
                         value={password}
                         onChange={event => setPassword(event.target.value)}
                         type="password"
-                        placeholder="Password"></input>
+                        placeholder="******"></input>
                 </div>
-                <div className={style.submit}>
-                    <button disabled={isInvalid} onClick={(e) => {
+                <div >
+                    <button className={style.submit} disabled={isInvalid} onClick={(e) => {
                         onSubmit(e)
                     }}>
                         Zaloguj

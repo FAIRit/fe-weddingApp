@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styles from './Home.module.css';
 import frame from '../images/abstract-3166168_640.png';
 import { withAuthentication } from '../components/Session';
+import smile from '../images/smile.png';
 
 function Home({ authUser }) {
     return (
@@ -10,7 +11,7 @@ function Home({ authUser }) {
             <h2 className={styles.gettingMarried}>Pobieramy się!</h2>
             {!authUser ? <>
                 <section>
-                    Zaloguj się i powiedz nam, ze będziesz tego dnia z nami! Bardzo na <strong>Ciebie</strong> liczymy <i className="far fa-smile"></i>
+                    Zaloguj się i powiedz nam, ze będziesz tego dnia z nami! Bardzo na <strong>Ciebie</strong> liczymy <img src={smile} alt="smile" className={styles.smile} />
                 </section>
                 <Link to="/SignIn" className={styles.signIn}>
                     <img src={frame} alt="frame" className={styles.frame}></img>

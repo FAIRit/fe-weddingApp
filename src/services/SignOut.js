@@ -1,9 +1,10 @@
 import React from 'react';
 import { withFirebase } from '../components/Firebase';
+import exit from '../images/exit.png'
 
 const SignOutButton = ({ firebase }) => (
   <button type="button" onClick={firebase.doSignOut}>
-    Sign Out icon
+    <img src={exit} alt="exit" className="signOut" />
   </button>
 );
 

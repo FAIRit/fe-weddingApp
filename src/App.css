@@ -108,7 +108,42 @@ nav {
   background-color: rgb(255, 255, 255, 0.7);
 }
 
+.signOut {
+  height: 18px;
+  width: auto;
+}
+
+.forgotPassword {
+  margin: 5% 3%;
+}
+
+.reset {
+  margin: 5%;
+  font-size: 12px;
+    padding: 2%;
+    margin-top: 3%;
+    background: transparent;
+    border: 0.5px solid black;
+    border-radius: 3px;
+    outline: none;
+}
+
+.resetButton {
+    border: 1px solid black;
+    border-radius: 5px;
+    background: black;
+    color: wheat;
+    font-size: 16px;
+    font-family: 'Amatic', sans-serif;
+}
+
 @media only screen and (min-width: 580px) {
+.reset {
+  padding: 1%;
+  font-size: 16px;
+  margin: 3% 0;
+}
+
   .background {
     background-image: url("./images/pairKiss.png");
     min-height: 500px;
@@ -132,6 +167,15 @@ nav {
   
   .place {
     background-image: url("./images/pairHands.png");
+  }
+
+  .navigation {
+    font-size: 28px;
+  }
+
+  .signOut {
+    height: 28px;
+    width: auto;
   }
 
 }

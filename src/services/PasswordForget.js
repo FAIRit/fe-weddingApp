@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { withFirebase } from '../components/Firebase';
 const PasswordForgetPage = () => (
-  <div>
-    <h1>PasswordForget</h1>
+  <div className="forgotPassword">
     <PasswordForgetForm />
   </div>
 );
@@ -36,15 +35,17 @@ class PasswordForgetFormBase extends Component {
     const isInvalid = email === '';
     return (
       <form onSubmit={this.onSubmit}>
+        Zapomniałeś hasła? Nic się nie martw! Podaj nam swojego maila do logowania, zajmiemy się resztą.
         <input
+        className="reset"
           name="email"
           value={this.state.email}
           onChange={this.onChange}
           type="text"
-          placeholder="Email Address"
+          placeholder="grazyna@gmail.com"
         />
-        <button disabled={isInvalid} type="submit">
-          Reset My Password
+        <button disabled={isInvalid} type="submit" className="resetButton" >
+          Resetuj
         </button>
         {error && <p>{error.message}</p>}
       </form>

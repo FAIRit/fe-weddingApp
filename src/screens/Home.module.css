@@ -71,6 +71,10 @@
   transform: rotateX(180deg);
 }
 
+.smile {
+  height: 28px;
+}
+
 @media only screen and (min-width: 580px) {
   .home {
     font-size: 28px;
@@ -87,4 +91,5 @@
   .button {
     font-weight: bold;
   }
+
 }
