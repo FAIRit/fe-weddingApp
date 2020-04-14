@@ -82,6 +82,22 @@ nav {
   background-image: url("./images/party.png");
 }
 
+.bride {
+  background-image: url("./images/barn-wedding-lights-ideas-44-500x752.jpg");
+}
+
+.groom {
+  background-image: url("./images/Untitleddesign.png");
+}
+
+.timetable {
+  background-image: url("./images/Love-is-patient.jpg");
+}
+
+.place {
+  background-image: url("./images/beautiful-rustic-wedding-reception-ideas-with-lights.jpg");
+}
+
 .sticky {
   position: fixed;
   top: 0;
@@ -90,4 +106,32 @@ nav {
   justify-content: space-around;
   align-items: center;
   background-color: rgb(255, 255, 255, 0.7);
+}
+
+@media only screen and (min-width: 580px) {
+  .background {
+    background-image: url("./images/pairKiss.png");
+    min-height: 500px;
+  }
+  
+  .services {
+    background-image: url("./images/lights.png");
+  }
+  
+  .bride {
+    background-image: url("./images/sunset.png");
+  }
+  
+  .groom {
+    background-image: url("./images/sunset.png");
+  }
+  
+  .timetable {
+    background-image: url("./images/lake.png");
+  }
+  
+  .place {
+    background-image: url("./images/pairHands.png");
+  }
+
 }

@@ -21,12 +21,12 @@ const NavAuthorized = ({ settingClass, authUser }) => (
 			<li onClick={() => settingClass('background')}>Home</li>
 		</Link>
 		{!!authUser.roles[ROLES.BRIDE] && (
-			<li>
+			<li onClick={() => settingClass('background bride')}>
 				<Link to={'/Bride'}>Bride</Link>
 			</li>
 		)}
 		{!!authUser.roles[ROLES.GROOM] && (
-			<li>
+			<li onClick={() => settingClass('background groom')}>
 				<Link to={"/Groom"}>Groom</Link>
 			</li>
 		)}
@@ -34,10 +34,10 @@ const NavAuthorized = ({ settingClass, authUser }) => (
 			<li onClick={() => settingClass('background services')}>Services</li>
 		</Link>
 		<Link to="/Place">
-			<li>Place</li>
+			<li onClick={() => settingClass('background place')}>Place</li>
 		</Link>
 		<Link to="/Timetable">
-			<li>Timetable</li>
+			<li onClick={() => settingClass('background timetable')}>Timetable</li>
 		</Link>
 		<Link to="/">
 			<li>
