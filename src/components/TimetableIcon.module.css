@@ -1,0 +1,16 @@
+.icon{
+    width: 40px;
+    height: auto;
+    margin-top: 10%;
+}
+
+.desc {
+    margin-top: 20%;
+    width: 100%;
+    text-align: center;
+    line-height: normal;
+    padding: 20% 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

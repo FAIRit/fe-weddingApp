@@ -1,0 +1,53 @@
+@font-face {
+    font-family: 'Amatic';
+    src: url(../fonts/AmaticSC-Regular.ttf)
+}
+
+.timetable {
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Amatic', sans-serif;
+    font-size: 20px;
+}
+
+.rightSide {
+    margin-top: 15%;
+    width: 45%;
+}
+
+.leftSide {
+    margin-top: -7%;
+    width: 45%;
+    border-right: dotted 3px black;
+}
+
+.freeIcons {
+    margin-top: 40%;
+    font-size: 8px;
+}
+
+.freeIcons a {
+    text-decoration: none;
+    color: rgb(102, 63, 4);
+}
+
+.icon {
+    width: 40px;
+    height: auto;
+    margin-top: 10%;
+}
+
+.weddingDay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    font-family: 'Amatic', sans-serif;
+    font-size: 20px;
+}
+
+.partyIcon {
+    width: 20%;
+    height: auto;
+}

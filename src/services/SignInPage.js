@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import style from './SignInPage.module.css';
 import { FirebaseContext } from '../components/Firebase';
+import PasswordForget from './PasswordForget';
 
 
 function SignInPage(props) {
@@ -16,13 +17,12 @@ function SignInPage(props) {
             .then(() => {
                 setEmail(email)
                 setPassword(password)
-                console.log(email, password, 'dobrze zalogowałes')
                 props.history.push("/");
             })
             .catch(error => {
                 setError(error);
             });
-        
+
     };
 
     const isInvalid = password === '' || email === '';
@@ -30,34 +30,37 @@ function SignInPage(props) {
         <div>
             <form>
                 <div className={style.loginLabel}>
-                    <label>Login</label>
+                    <label className={style.label}>E-mail</label>
                     <input
+                    className={style.input}
                         name="email"
                         value={email}
                         onChange={event => setEmail(event.target.value)}
                         type="text"
-                        placeholder="Email Address"
+                        placeholder="grazyna@gmail.com"
                     ></input>
                 </div>
                 <div className={style.loginLabel}>
-                    <label>Hasło</label>
+                    <label className={style.label}>Hasło</label>
                     <input
+                    className={style.input}
                         name="password"
                         value={password}
                         onChange={event => setPassword(event.target.value)}
                         type="password"
-                        placeholder="Password"></input>
+                        placeholder="******"></input>
                 </div>
-                <div className={style.submit}>
-                    <button disabled={isInvalid} onClick={(e) => {
+                <div >
+                    <button className={style.submit} disabled={isInvalid} onClick={(e) => {
                         onSubmit(e)
-                        }}>
+                    }}>
                         Zaloguj
                     </button>
 
                 </div>
                 {error && <p>{error.message}</p>}
             </form>
+            <PasswordForget />
 
         </div>
     )

@@ -1,0 +1,10 @@
+.services {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100vw;
+}
+
+.icon {
+    font-size: 56px;
+}
