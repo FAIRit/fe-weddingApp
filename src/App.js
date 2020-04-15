@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Nav from './Nav';
 import Home from './screens/Home';
 import Services from './screens/Services';
-import WeddingHall from './screens/WeddingHall';
+import Guests from './screens/Guests';
 import Timetable from './screens/Timetable';
 import PasswordForget from './services/PasswordForget';
 import Bride from './screens/Bride';
@@ -16,19 +16,6 @@ import { withAuthentication } from './components/Session';
 function App({ authUser }) {
   const [classname, setClassname] = useState("background")
 
-  useEffect(() => {
-    // window.addEventListener('scroll', () => {
-    //   const isTop = window.scrollY < 383
-
-    //   if (!isTop) {
-    //     setSticky(true)
-    //   } else {
-    //     setSticky(false)
-    //   }
-    // })
-
-  }, [])
-
   return (
     <Router>
       <h1>{`Natalia&Konrad`}</h1>
@@ -38,7 +25,7 @@ function App({ authUser }) {
         <Switch>
           <Route path="/" component={Home} exact />
           <Route path="/Services" component={Services} />
-          <Route path="/Place" component={WeddingHall} />
+          <Route path="/Place" component={Guests} />
           <Route path="/Timetable" component={Timetable} />
           <Route path="/SignUp" component={SignUpPage} />
           <Route path="/SignIn" component={SignInPage} />
