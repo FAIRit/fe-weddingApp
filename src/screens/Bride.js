@@ -7,9 +7,9 @@ import * as ROLES from '../constants/roles';
 
 function Bride() {
   return (
-        <div>
-          Bride
-      </div>
+    <div>
+      Bride
+    </div>
   )
 }
 

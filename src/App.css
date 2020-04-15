@@ -120,21 +120,21 @@ nav {
 .reset {
   margin: 5%;
   font-size: 12px;
-    padding: 2%;
-    margin-top: 3%;
-    background: transparent;
-    border: 0.5px solid black;
-    border-radius: 3px;
-    outline: none;
+  padding: 2%;
+  margin-top: 3%;
+  background: transparent;
+  border: 0.5px solid black;
+  border-radius: 3px;
+  outline: none;
 }
 
 .resetButton {
-    border: 1px solid black;
-    border-radius: 5px;
-    background: black;
-    color: wheat;
-    font-size: 16px;
-    font-family: 'Amatic', sans-serif;
+  border: 1px solid black;
+  border-radius: 5px;
+  background: black;
+  color: wheat;
+  font-size: 16px;
+  font-family: 'Amatic', sans-serif;
 }
 
 .signOutButton {
@@ -145,33 +145,33 @@ nav {
 }
 
 @media only screen and (min-width: 580px) {
-.reset {
-  padding: 1%;
-  font-size: 16px;
-  margin: 3% 0;
-}
+  .reset {
+    padding: 1%;
+    font-size: 16px;
+    margin: 3% 0;
+  }
 
   .background {
     background-image: url("./images/pairKiss.png");
     min-height: 500px;
   }
-  
+
   .services {
     background-image: url("./images/lights.png");
   }
-  
+
   .bride {
     background-image: url("./images/sunset.png");
   }
-  
+
   .groom {
     background-image: url("./images/sunset.png");
   }
-  
+
   .timetable {
     background-image: url("./images/lake.png");
   }
-  
+
   .place {
     background-image: url("./images/pairHands.png");
   }
