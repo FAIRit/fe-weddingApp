@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { compose } from 'recompose';
-import { withAuthorization } from '../components/Session';
+import { withAuthorization, AuthUserContext, } from '../components/Session';
 import { withFirebase } from '../components/Firebase';
 import * as ROLES from '../constants/roles';
 
@@ -13,16 +13,16 @@ function Guests() {
 }
 
 const AllGuests = ({ guests }) => (
-    <ul>
+    <section>
         {guests.map(guest => (
             <SingleGuest key={guest.uid} guest={guest} />
         ))}
-    </ul>
+    </section>
 );
 const SingleGuest = ({ guest }) => (
-    <li>
-        <strong>{guest.userId}</strong> {guest.text}
-    </li>
+    <div>
+        <strong>{guest.userId}</strong>
+    </div>
 );
 
 class GuestsBase extends Component {
@@ -67,10 +67,11 @@ class GuestsBase extends Component {
 
     };
 
-    onCreateGuest = event => {
+    onCreateGuest = (event, authUser) => {
         this.props.firebase.guests().push({
             adults: this.state.adults,
-            kids: this.state.kids
+            kids: this.state.kids,
+            userId: authUser.uid,
         });
         this.setState({
             kids: 0,
@@ -82,38 +83,39 @@ class GuestsBase extends Component {
     render() {
         const { adults, kids, guests, loading } = this.state;
         return (
-            <div>
-                {loading && <div>Loading ...</div>}
-                {guests ? (
-                    <AllGuests guests={guests} />
-                ) : (
-                        <div>There are no guests yet...</div>
-                    )}
-                <form onSubmit={this.onCreateGuest}>
-                    <p>Daj znać, ze będziesz tego dnia z nami!</p>
-                    <label>Dorośli</label>
-                    <input
-                        id="adults"
-                        type="number"
-                        placeholder="podaj ilość"
-                        value={adults}
-                        onChange={this.onChange}
-                    />
-                    <label>Dzieci</label>
-                    <input
-                        type="number"
-                        placeholder="podaj ilość"
-                        value={kids}
-                        onChange={this.onChange}
-                    />
-                    <button type="submit">Send</button>
-                </form>
-            </div>
+            <AuthUserContext.Consumer>
+                {authUser => (
+                    <div>
+                        {loading && <div>Loading ...</div>}
+                        {guests ? (
+                            <AllGuests guests={guests} />
+                        ) : (
+                                <div>There are no guests yet...</div>
+                            )}
+                        <form onSubmit={event => this.onCreateGuest(event, authUser)}>
+                            <p>Daj znać, ze będziesz tego dnia z nami!</p>
+                            <label>Dorośli</label>
+                            <input
+                                id="adults"
+                                type="number"
+                                placeholder="podaj ilość"
+                                value={adults}
+                                onChange={this.onChange}
+                            />
+                            <label>Dzieci</label>
+                            <input
+                                type="number"
+                                placeholder="podaj ilość"
+                                value={kids}
+                                onChange={this.onChange}
+                            />
+                            <button type="submit">Send</button>
+                        </form>
+                    </div>
+                )}
+            </AuthUserContext.Consumer>
         );
     }
-
-
-
 }
 
 const condition = authUser =>
