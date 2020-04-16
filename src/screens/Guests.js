@@ -31,8 +31,11 @@ class GuestsBase extends Component {
         this.state = {
             loading: false,
             guests: [],
+            adults: 0,
+            kids: 0
         };
     }
+
     componentDidMount() {
         this.setState({ loading: true });
         this.props.firebase.guests().on('value', snapshot => {
@@ -54,8 +57,30 @@ class GuestsBase extends Component {
     componentWillUnmount() {
         this.props.firebase.guests().off();
     }
+
+    onChange = event => {
+        if (event.target.id === "adults") {
+            this.setState({ adults: event.target.value });
+        } else {
+            this.setState({ kids: event.target.value });
+        }
+
+    };
+
+    onCreateGuest = event => {
+        this.props.firebase.guests().push({
+            adults: this.state.adults,
+            kids: this.state.kids
+        });
+        this.setState({
+            kids: 0,
+            adults: 0
+        });
+        event.preventDefault();
+    };
+
     render() {
-        const { guests, loading } = this.state;
+        const { adults, kids, guests, loading } = this.state;
         return (
             <div>
                 {loading && <div>Loading ...</div>}
@@ -64,6 +89,25 @@ class GuestsBase extends Component {
                 ) : (
                         <div>There are no guests yet...</div>
                     )}
+                <form onSubmit={this.onCreateGuest}>
+                    <p>Daj znać, ze będziesz tego dnia z nami!</p>
+                    <label>Dorośli</label>
+                    <input
+                        id="adults"
+                        type="number"
+                        placeholder="podaj ilość"
+                        value={adults}
+                        onChange={this.onChange}
+                    />
+                    <label>Dzieci</label>
+                    <input
+                        type="number"
+                        placeholder="podaj ilość"
+                        value={kids}
+                        onChange={this.onChange}
+                    />
+                    <button type="submit">Send</button>
+                </form>
             </div>
         );
     }
